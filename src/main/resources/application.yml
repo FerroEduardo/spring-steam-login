@@ -1,0 +1,13 @@
+softawii:
+  steam:
+    token: ${SOFTAWII_STEAM_TOKEN}
+
+logging:
+  level:
+    root: info
+
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    session:
+      timeout: ${SESSION_TIMEOUT:1h}

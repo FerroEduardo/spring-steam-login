@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steam Login</title>
+</head>
+<body>
+<form id="form" action="https://steamcommunity.com/openid/login" method="post" style="display:none">
+    <input type="hidden" name="openid.identity" value="http://specs.openid.net/auth/2.0/identifier_select">
+    <input type="hidden" name="openid.claimed_id" value="http://specs.openid.net/auth/2.0/identifier_select">
+    <input type="hidden" name="openid.ns" value="http://specs.openid.net/auth/2.0">
+    <input type="hidden" name="openid.mode" value="checkid_setup">
+    <input type="hidden" name="openid.realm" th:value="${openid_realm}">
+    <input type="hidden" name="openid.return_to" th:value="${openid_return_to}">
+    <input type="image" name="submit"
+           src="https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/brazilian/sits_small.png"
+           alt="Submit">
+</form>
+<script>
+    window.addEventListener("load", (event) => {
+        document.querySelector("#form").submit()
+    });
+</script>
+</body>
+</html>
