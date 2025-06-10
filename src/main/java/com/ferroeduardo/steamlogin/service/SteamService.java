@@ -45,15 +45,15 @@ public class SteamService {
 
     public String validateLoginParameters(SteamOpenidLoginDTO dto) throws IllegalArgumentException {
         MultiValueMap<String, String> openidRequest = new LinkedMultiValueMap<>();
-        openidRequest.add("openid_ns", dto.getNs());
-        openidRequest.add("openid_op_endpoint", dto.getOp_endpoint());
-        openidRequest.add("openid_claimed_id", dto.getClaimed_id());
-        openidRequest.add("openid_identity", dto.getIdentity());
-        openidRequest.add("openid_return_to", dto.getReturn_to());
-        openidRequest.add("openid_response_nonce", dto.getResponse_nonce());
-        openidRequest.add("openid_assoc_handle", dto.getAssoc_handle());
-        openidRequest.add("openid_signed", dto.getSigned());
-        openidRequest.add("openid_sig", dto.getSig());
+        openidRequest.add("openid.ns", dto.getNs());
+        openidRequest.add("openid.op_endpoint", dto.getOp_endpoint());
+        openidRequest.add("openid.claimed_id", dto.getClaimed_id());
+        openidRequest.add("openid.identity", dto.getIdentity());
+        openidRequest.add("openid.return_to", dto.getReturn_to());
+        openidRequest.add("openid.response_nonce", dto.getResponse_nonce());
+        openidRequest.add("openid.assoc_handle", dto.getAssoc_handle());
+        openidRequest.add("openid.signed", dto.getSigned());
+        openidRequest.add("openid.sig", dto.getSig());
         openidRequest.add("openid.mode", "check_authentication");
 
         HttpHeaders headers = new HttpHeaders();
